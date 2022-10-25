@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>SS</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id = "display" value ="">
+        <br>
+        <!-- <div id="display" name="display" value="0"></div> -->
+        <button id="btn1" name="btn" value="1">1</button>
+        <button id="btn2" name="btn" value="2">2</button>
+        <button id="btn3" name="btn" value="3">3</button>
+        <br>
+        <button id="plus" name="btn" value="+">+</button>
+        <button id="minus" name="btn" value="-">-</button>
+        <br>
+        <button id="equal" name="btn" value="=">=</button>
+        <button id="ac" name="btn" value="ac">AC</button>
+    </div>
+    <script>
+        const num = document.getElementsByName("btn");
+        console.log(num);
+        for (let elem of num) {
+            elem.addEventListener('click', () => {
+                const disp = document.getElementById("display");
+
+                if( elem.id == 'equal') 
+                    disp.value= eval(disp.value);
+                else if( elem.id == "ac") 
+                    disp.value= "";
+                else
+                    disp.value += elem.value;
+            });
+        }
+    </script>
+</body>
+
+</html>
