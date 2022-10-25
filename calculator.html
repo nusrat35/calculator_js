@@ -2,47 +2,10 @@
 
 <head>
     <title>Calculator</title>
-    <style>
-        .main {
-            /* background-color: rgb(99, 93, 93); */
-            padding: 1px;
-            width: fit-content;
-            margin: auto;
-            margin-top: 5%;
-        }
-
-        #display {
-            height: 50px;
-            width: 296px;
-            text-align: right;
-            font-weight: bold;
-            font-size: 20px;
-            padding: 12px;
-            border: 1px solid #4285f4;
-            border-radius: 4px;
-        }
-
-        /* #ac{height: 50px; width: 166px;} */
-        button {
-            height: 43px;
-            width: 68px;
-            /* font-weight: bold; */
-            font-size: 20px;
-            cursor: pointer;
-            background: #dadce0;
-            color: #202124;
-            border: 1px solid #dadce0;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin: 2px;
-        }
-
-        #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn0, #point{
-            background: #f1f3f4;
-        }
-        #equal{background-color: #4285f4; color: white;}
-        #ac{ color: red; font-size: 15px;}
-    </style>
+    <link rel="icon"
+        href="./icons/icons8-calculator-96.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="calculatorStyle.css">
 </head>
 
 <body>
@@ -76,24 +39,6 @@
         <br>
     </div>
 </body>
-<script>
-    const num = document.getElementsByName("btn");
-    console.log(num);
-    for (let elem of num) {
-        elem.addEventListener('click', () => {
-            const disp = document.getElementById("display");
-
-            if (elem.id == 'equal')
-                disp.value = eval(disp.value);
-            else if (elem.id == "ac")
-                disp.value = "";
-            else if (elem.id == "back")
-                disp.value = disp.value.slice(0, -1);
-
-            else
-                disp.value += elem.value;
-        });
-    }
-</script>
+<script src="calculator.js"></script>
 
 </html>
